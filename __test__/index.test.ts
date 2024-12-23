@@ -1,6 +1,6 @@
 import { createGenerator } from 'unocss'
 import { describe, expect, it } from 'vitest'
-import { presetDarkModeTheme } from '../src'
+import { presetDarkModeTheme } from '../src/index.ts'
 
 describe('preset-dark-mode-theme', () => {
   it('basic', async () => {

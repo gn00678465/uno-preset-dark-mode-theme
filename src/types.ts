@@ -1,12 +1,19 @@
-import type { PresetOptions } from 'unocss'
 import type { Theme } from 'unocss/preset-mini'
 
-type UnoCssThemeKeys = 'colors' | 'accentColor' | 'textColor' | 'backgroundColor' | 'borderColor' | 'shadowColor'
+type UnoCssThemeKeys =
+  | 'colors'
+  | 'accentColor'
+  | 'textColor'
+  | 'backgroundColor'
+  | 'borderColor'
+  | 'shadowColor'
 
 export interface Colors {
-  [key: string]: Colors & {
-      DEFAULT?: string;
-  } | string;
+  [key: string]:
+    | Colors & {
+      DEFAULT?: string
+    }
+    | string
 }
 
 export type ColorsTheme = Pick<Theme, UnoCssThemeKeys>

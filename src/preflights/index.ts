@@ -1,18 +1,22 @@
 import { entriesToCss, type Preflight } from 'unocss'
 import type { Theme } from 'unocss/preset-mini'
-import type { PresetBuildVariableOptions } from '../types'
+import type { PresetBuildVariableOptions } from '../types.ts'
 
 export function preflights(
   options: PresetBuildVariableOptions,
   lightBase: Record<string, string>,
-  darkBase: Record<string,string>
+  darkBase: Record<string, string>,
 ): Preflight<Theme>[] | undefined {
   return [
     {
       layer: 'theme',
       getCSS() {
-        const lightRoots = options.selector === 'media' ? ['@media (prefers-color-scheme: light)'] : [':root']
-        const darkRoots = options.selector === 'media' ? ['@media (prefers-color-scheme: dark)'] : [`:root.${options.selector}`]
+        const lightRoots = options.selector === 'media'
+          ? ['@media (prefers-color-scheme: light)']
+          : [':root']
+        const darkRoots = options.selector === 'media'
+          ? ['@media (prefers-color-scheme: dark)']
+          : [`:root.${options.selector}`]
 
         let lightCss = entriesToCss(Object.entries(lightBase))
         let darkCss = entriesToCss(Object.entries(darkBase))
@@ -22,10 +26,10 @@ export function preflights(
         }
 
         return [
-          lightRoots.map(root => `${root}{${lightCss}}`).join(''),
-          darkRoots.map(root => `${root}{${darkCss}}`).join('')
+          lightRoots.map((root) => `${root}{${lightCss}}`).join(''),
+          darkRoots.map((root) => `${root}{${darkCss}}`).join(''),
         ].join('\n')
       },
-    }
+    },
   ]
 }

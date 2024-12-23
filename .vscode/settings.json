@@ -4,6 +4,12 @@
   },
   "editor.formatOnSave": false,
   "unocss.root": [],
-  "vitest.disableWorkspaceWarning": true,
-  "editor.tabSize": 2
+  "deno.enable": true,
+  "editor.tabSize": 2,
+  "cSpell.words": [
+    "colord",
+    "preflights",
+    "unocss"
+  ],
+  "vue.server.hybridMode": "typeScriptPluginOnly"
 }

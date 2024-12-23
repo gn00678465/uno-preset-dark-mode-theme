@@ -1,0 +1,23 @@
+{
+  "name": "@unocss/preset-dark-mode-theme",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "tasks": {
+    "dev": "deno task --eval \"pnpm dev\"",
+    "build": "deno task --eval \"pnpm build\"",
+    "test": "deno task --eval \"pnpm test\"",
+    "test:coverage": "deno task --eval \"pnpm test:coverage\"",
+    "fmt": "deno fmt"
+  },
+  "license": "MIT",
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  },
+  "fmt": {
+    "semiColons": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "include": ["src/"],
+    "exclude": ["coverage/**", "dist/**", "node_modules/**"]
+  }
+}

@@ -1,10 +1,10 @@
-import type { PresetBuildVariableOptions } from '../types'
+import type { PresetBuildVariableOptions } from '../types.ts'
 
 /**
  * 包裝成 css variable 格式
- * @param name 
- * @param fallback 
- * @returns 
+ * @param name
+ * @param fallback
+ * @returns
  */
 export function wrapVar(name: string, fallback?: string) {
   if (/var\(.*\)/.test(name)) return name
@@ -14,7 +14,7 @@ export function wrapVar(name: string, fallback?: string) {
 /**
  * 包裝成 css rgb 格式
  * @param str
- * @returns 
+ * @returns
  */
 export function wrapRGB(str: string) {
   if (str.startsWith('rgb')) return str
@@ -24,7 +24,7 @@ export function wrapRGB(str: string) {
 /**
  * 包裝成 css hsl 格式
  * @param str
- * @returns 
+ * @returns
  */
 export function wrapHSL(str: string) {
   if (str.startsWith('hsl')) return str
