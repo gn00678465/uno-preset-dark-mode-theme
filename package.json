@@ -1,0 +1,32 @@
+{
+  "name": "uno-preset-dark-mode-theme",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@vitest/coverage-v8": "^2.1.8",
+    "jsdom": "^25.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "~5.6.2",
+    "@unocss/rule-utils": "^0.65.1",
+    "unocss": "^0.65.1",
+    "vite": "^6.0.1",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "colord": "^2.9.3"
+  },
+  "packageManager": "pnpm@9.12.3"
+}
