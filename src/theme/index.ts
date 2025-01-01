@@ -1,7 +1,7 @@
 import { convertToRGB, getTheme, recursiveTheme } from './helpers.ts'
-import type { PresetBuildVariableOptions } from '../types.ts'
+import type { PresetDarkModeThemeOptions } from '../types.ts'
 
-export function generateTheme(options: PresetBuildVariableOptions) {
+export function generateTheme(options: PresetDarkModeThemeOptions) {
   const { light, dark } = getTheme(options.theme)
 
   const lightBase = {}, darkBase = {}

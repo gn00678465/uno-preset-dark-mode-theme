@@ -1,5 +1,3 @@
-import type { PresetBuildVariableOptions } from '../types.ts'
-
 /**
  * 包裝成 css variable 格式
  * @param name

@@ -4,7 +4,7 @@ import { colord } from 'colord'
 import type {
   Colors,
   ColorsTheme,
-  PresetBuildVariableOptions,
+  PresetDarkModeThemeOptions,
 } from '../types.ts'
 
 /**
@@ -12,7 +12,7 @@ import type {
  * @param theme
  * @returns
  */
-export function getTheme(theme: PresetBuildVariableOptions['theme']) {
+export function getTheme(theme: PresetDarkModeThemeOptions['theme']) {
   if (!theme) return { light: {}, dark: {} }
   if ('light' in theme && 'dark' in theme) return theme
   return { light: theme, dark: theme }

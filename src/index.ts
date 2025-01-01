@@ -1,10 +1,10 @@
 import { definePreset, type Postprocessor } from 'unocss'
-import type { PresetBuildVariableOptions } from './types.ts'
+import type { PresetDarkModeThemeOptions } from './types.ts'
 import { generateTheme } from './theme/index.ts'
 import { preflights } from './preflights/index.ts'
 
 export const presetDarkModeTheme = definePreset(
-  (options: PresetBuildVariableOptions = {}) => {
+  (options: PresetDarkModeThemeOptions = {}) => {
     options.selector = options.selector ?? 'dark'
     options.variablePrefix = options.variablePrefix ?? 'un-'
 
@@ -23,7 +23,7 @@ export const presetDarkModeTheme = definePreset(
   },
 )
 
-export function VarPrefixPostprocessor(
+function VarPrefixPostprocessor(
   prefix: string,
 ): Postprocessor | undefined {
   if (prefix !== 'un-') {
@@ -37,3 +37,5 @@ export function VarPrefixPostprocessor(
     }
   }
 }
+
+export type { PresetDarkModeThemeOptions }

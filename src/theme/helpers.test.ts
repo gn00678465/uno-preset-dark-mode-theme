@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { convertToHSL, convertToRGB, recursiveTheme } from './helpers.ts'
-import { ColorsTheme } from '../types.ts'
+import type { ColorsTheme } from '../types.ts'
 
 describe('convertToRGB', () => {
   test('should be define', () => {

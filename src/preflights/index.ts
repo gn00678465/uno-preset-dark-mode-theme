@@ -1,9 +1,9 @@
 import { entriesToCss, type Preflight } from 'unocss'
 import type { Theme } from 'unocss/preset-mini'
-import type { PresetBuildVariableOptions } from '../types.ts'
+import type { PresetDarkModeThemeOptions } from '../types.ts'
 
 export function preflights(
-  options: PresetBuildVariableOptions,
+  options: PresetDarkModeThemeOptions,
   lightBase: Record<string, string>,
   darkBase: Record<string, string>,
 ): Preflight<Theme>[] | undefined {

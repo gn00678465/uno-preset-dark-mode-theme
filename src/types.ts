@@ -18,7 +18,7 @@ export interface Colors {
 
 export type ColorsTheme = Pick<Theme, UnoCssThemeKeys>
 
-export interface PresetBuildVariableOptions {
+export interface PresetDarkModeThemeOptions {
   /**
    * 將黑暗模式主題綁定的 class name or media
    * @default 'dark'
