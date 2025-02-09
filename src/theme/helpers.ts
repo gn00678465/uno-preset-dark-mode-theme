@@ -1,11 +1,14 @@
 import { parseCssColor } from '@unocss/rule-utils'
 import { wrapRGB, wrapVar } from '../utility/index.ts'
-import { colord } from 'colord'
+import { colord, extend } from 'colord'
+import namesPlugin from "colord/plugins/names"
 import type {
   Colors,
   ColorsTheme,
   PresetDarkModeThemeOptions,
 } from '../types.ts'
+
+extend([namesPlugin])
 
 /**
  * 取得傳入的 theme 設定
@@ -19,26 +22,26 @@ export function getTheme(theme: PresetDarkModeThemeOptions['theme']) {
 }
 
 /**
- * 轉換為 rgba 格式
- * @param color
- * @returns
+ * 轉換為 rgba 格式,支援透明度
+ * @param color 輸入顏色(支援 hex, rgb, rgba, hsl, hsla, named colors)
+ * @returns 解析後的 CSS 顏色物件
  */
 export const convertToRGB = (color?: string) => {
   if (color && colord(color).isValid()) {
-    const { r, g, b } = colord(color).toRgb()
-    return parseCssColor(`rgb(${r}, ${g}, ${b})`)
+    const { r, g, b, a } = colord(color).toRgb()
+    return parseCssColor(a < 1 ? `rgba(${r}, ${g}, ${b}, ${a})` : `rgb(${r}, ${g}, ${b})`)
   }
 }
 
 /**
- * 轉換為 hsla 格式
- * @param color
- * @returns
+ * 轉換為 hsla 格式,支援透明度
+ * @param color 輸入顏色(支援 hex, rgb, rgba, hsl, hsla, named colors)
+ * @returns 解析後的 CSS 顏色物件
  */
 export const convertToHSL = (color?: string) => {
   if (color && colord(color).isValid()) {
-    const { h, s, l } = colord(color).toHsl()
-    return parseCssColor(`hsl(${h}, ${s}, ${l})`)
+    const { h, s, l, a } = colord(color).toHsl()
+    return parseCssColor(a < 1 ? `hsla(${h}, ${s}%, ${l}%, ${a})` : `hsl(${h}, ${s}%, ${l}%)`)
   }
 }
 
