@@ -1,7 +1,7 @@
 {
   "name": "uno-preset-dark-mode-theme",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
@@ -23,15 +23,15 @@
     "dist"
   ],
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.48.1",
-    "@types/node": "^22.10.1",
-    "@unocss/rule-utils": "^0.65.1",
-    "@vitest/coverage-v8": "^2.1.8",
+    "@microsoft/api-extractor": "^7.49.2",
+    "@types/node": "^22.13.1",
+    "@unocss/rule-utils": "^65.4.3",
+    "@vitest/coverage-v8": "^2.1.9",
     "jsdom": "^25.0.1",
-    "tsup": "^8.3.5",
-    "typescript": "~5.6.2",
-    "unocss": "^0.65.1",
-    "vitest": "^2.1.8"
+    "tsup": "^8.3.6",
+    "typescript": "~5.6.3",
+    "unocss": "^65.4.3",
+    "vitest": "^2.1.9"
   },
   "dependencies": {
     "colord": "^2.9.3"
